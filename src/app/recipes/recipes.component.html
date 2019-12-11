@@ -1,0 +1,14 @@
+<div class="row">
+    <div class="col-md-5">
+        <app-recipelist (EmitRecipe)="ShowItemDetail($event)"></app-recipelist>
+    </div>
+    <div class="col-md-7">
+        <app-recipe-details [recipe]="ShowRecipe" *ngIf="ShowRecipe; else noitem">
+
+
+        </app-recipe-details>
+         <ng-template #noitem>
+            <p> Pleae select recipe!</p>
+         </ng-template>
+    </div>
+</div>

@@ -1,0 +1,22 @@
+<app-header (EmitCurrentPage)="CurrentView=$event"></app-header>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <app-recipes *ngIf="CurrentView=='recipes'"></app-recipes>
+            <app-shopping-list *ngIf="CurrentView=='ShoppingList'"></app-shopping-list>        
+            
+        </div>
+    </div>
+    <p appBasichighlight>
+        This is basc highlight drective
+    </p>
+    <p appBetterHighlight>
+        This is batter highlighter using renderer
+    </p>
+
+    <div [ngSwitch]="value">
+        <p *ngSwitchCase="2">The value is 2</p>
+        <p *ngSwitchCase="4">The value is 4</p>
+        <p *ngSwitchDefault>The value is default</p>
+    </div>
+</div>
